@@ -13,3 +13,11 @@ $ ssh -nNT -R 80:localhost:8000 root@bswinnerton.tunneled.computer
 It looks something like this:
 
 ![screenshot](https://cloud.githubusercontent.com/assets/934497/20954501/eb046a5c-bc09-11e6-9be0-5798e226028d.png)
+
+In order to set up a server of your choice to support reverse tunnels, add the
+following to `/etc/ssh/sshd_config`:
+
+```
+AllowTcpForwarding yes
+GatewayPorts yes
+```
